@@ -1,11 +1,11 @@
 import React from "react";
 import { ResponsivePie } from "@nivo/pie";
-import { useSelector } from "react-redux";
 import { useQuery } from "@tanstack/react-query";
 import { fetchData } from "../api/Expenses";
+import useIndexStore from "../zustand/useIndexStore";
 
 const PieChart = () => {
-  const { activeIndex } = useSelector((state) => state.data);
+  const activeIndex = useIndexStore((state) => state.activeIndex);
 
   const {
     data: expenses,

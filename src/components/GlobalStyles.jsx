@@ -26,18 +26,22 @@ const GlobalStyles = createGlobalStyle`
     justify-content: center !important;
     margin: auto;
     }
+
     .swal2-icon-content {
        color: #e22a2a;
     }
+
     .swal2-popup{
         width: 30rem;
         height: 20rem;
         padding: 25px;
         grid-row: 1;
     }
+
     .swal2-container{
         grid-row: 1;
     }
+     
     .swal2-success-circular-line-right{
         display: none;
     }

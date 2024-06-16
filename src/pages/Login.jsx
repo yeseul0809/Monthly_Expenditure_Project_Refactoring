@@ -110,8 +110,6 @@ export const StInput = styled.input`
 export const StButton = styled.button`
   width: 80px;
   height: 40px;
-  width: 80px;
-  height: 40px;
   background-color: bisque;
   border-radius: 20px;
   border: 0.5px;

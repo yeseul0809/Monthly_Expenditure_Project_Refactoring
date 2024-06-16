@@ -1,23 +1,18 @@
 import React, { useEffect } from "react";
-import { stringify, v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { setData } from "../redux/slices/DataSlice";
-import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { fetchData } from "../api/Expenses";
+import useIndexStore from "../zustand/useIndexStore";
 
 const List = () => {
-  const { activeIndex } = useSelector((state) => state.data);
-  const dispatch = useDispatch();
+  const activeIndex = useIndexStore((state) => state.activeIndex);
   const navigate = useNavigate();
 
   // useQuery사용
   const { data, isLoading, error } = useQuery({
     queryKey: ["expenses"],
     queryFn: fetchData,
-    onSuccess: (data) => dispatch(setData(data)),
   });
 
   // 클릭한 월 에 맞는 데이터 필터링
